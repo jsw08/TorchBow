@@ -1,0 +1,4 @@
+name: TorchArrow
+version: '${version}'
+main: io.github.jsw08.torcharrow.TorchArrow
+api-version: '1.20'
