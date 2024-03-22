@@ -1,7 +1,6 @@
 package io.github.jsw08.torcharrow;
 
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -12,8 +11,8 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
 public class TorchArrowItem extends ItemStack {
-    public static NamespacedKey key = new NamespacedKey(TorchArrow.getPlugin(TorchArrow.class), "isTorchArrowItem");
-    private static NamespacedKey recipeKey = new NamespacedKey(TorchArrow.getPlugin(TorchArrow.class),"torch_arrow");
+    public static final NamespacedKey key = new NamespacedKey(TorchArrow.getPlugin(TorchArrow.class), "isTorchArrowItem");
+    private static final NamespacedKey recipeKey = new NamespacedKey(TorchArrow.getPlugin(TorchArrow.class),"torch_arrow");
     public TorchArrowItem() {
         super(Material.ARROW, 1);
         ItemMeta meta = getItemMeta();
@@ -37,6 +36,6 @@ public class TorchArrowItem extends ItemStack {
         ShapelessRecipe TorchArrowRecipe = new ShapelessRecipe(recipeKey, new TorchArrowItem());
         TorchArrowRecipe.addIngredient(2, Material.TORCH);
         TorchArrowRecipe.addIngredient(1, Material.ARROW);
-        Bukkit.addRecipe(TorchArrowRecipe, true);
+        Bukkit.addRecipe(TorchArrowRecipe, false);
     }
 }
