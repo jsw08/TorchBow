@@ -9,7 +9,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
@@ -50,10 +49,5 @@ public class TorchArrowListener implements Listener {
         }
 
         e.getEntity().remove();
-    }
-
-    @EventHandler
-    public void onPlayer(PlayerJoinEvent e) {
-        e.getPlayer().getInventory().setItemInMainHand(new TorchArrowItem().asQuantity(64));
     }
 }
